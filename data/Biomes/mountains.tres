@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Biome" format=3 uid="uid://damjowejyrkjm"]
+
+[ext_resource type="Script" uid="uid://dg30pbkg5ctxp" path="res://data/biome.gd" id="1_8jh8g"]
+[ext_resource type="Script" uid="uid://c1is8mp11sgnl" path="res://data/resource_type.gd" id="2_eadbt"]
+[ext_resource type="Resource" uid="uid://ch6wem4qjii8i" path="res://data/resources/iron.tres" id="3_eadbt"]
+
+[resource]
+script = ExtResource("1_8jh8g")
+id = "mountains"
+display_name = "Mountains"
+rock_type = "granite"
+typical_resources = Array[ExtResource("2_eadbt")]([ExtResource("3_eadbt")])
+metadata/_custom_type_script = "uid://dg30pbkg5ctxp"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Biome" format=3 uid="uid://ummxr02yhkdi"]
+
+[ext_resource type="Script" uid="uid://dg30pbkg5ctxp" path="res://data/biome.gd" id="1_sgh37"]
+[ext_resource type="Script" uid="uid://c1is8mp11sgnl" path="res://data/resource_type.gd" id="2_nir6j"]
+[ext_resource type="Resource" uid="uid://qh33fbgbde76" path="res://data/resources/coal.tres" id="3_nir6j"]
+
+[resource]
+script = ExtResource("1_sgh37")
+id = "plains"
+display_name = "Plains"
+rock_type = "sedimentary"
+typical_resources = Array[ExtResource("2_nir6j")]([ExtResource("3_nir6j")])
+metadata/_custom_type_script = "uid://dg30pbkg5ctxp"

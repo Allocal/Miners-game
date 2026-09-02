@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="MinersGame"
+run/main_scene="uid://c5sg7mt3y3538"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
