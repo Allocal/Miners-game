@@ -11,5 +11,8 @@ func _ready() -> void:
 	print("Region: ", region.display_name)
 	print("Composition: ", region.biome_composition)
 
+	var location := WorldGenerator.generate_location(region, biomes)
+	print("Location resources: ", location.resource_amounts)
+
 
 
