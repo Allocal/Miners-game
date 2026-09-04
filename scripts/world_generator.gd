@@ -11,6 +11,7 @@ static func generate_region(available_biomes: Array[Biome]) -> Region:
 	var region := Region.new()
 	region.id = "region_" + str(randi())
 	region.display_name = "Generated Region"
+	region.danger_level = randf_range(0.5, 1.5)  # один и тот же биом может быть то опаснее, то спокойнее от партии к партии
 
 	var shuffled := available_biomes.duplicate()
 	shuffled.shuffle()
@@ -29,8 +30,8 @@ static func generate_region(available_biomes: Array[Biome]) -> Region:
 	return region
 
 ## Генерирует конкретную локацию внутри региона: считает, сколько
-## каждого типичного для присутствующих биомов ресурса там доступно.
-## Пока НЕ генерирует препятствия — нет ни одного реального ObstacleType.
+## каждого типичного для присутствующих биомов ресурса там доступно,
+## и какие препятствия там появляются.
 static func generate_location(region: Region, all_biomes: Array[Biome]) -> Location:
 	var location := Location.new()
 	location.region = region
@@ -49,6 +50,13 @@ static func generate_location(region: Region, all_biomes: Array[Biome]) -> Locat
 			var amount := share * randf_range(0.5, 1.5) / resource_type.rarity
 			var current: float = location.resource_amounts.get(resource_type.id, 0.0)
 			location.resource_amounts[resource_type.id] = current + amount
+
+		for hazard in biome.typical_hazards:
+			# существование препятствия в локации решается один раз, тут — не то же самое,
+			# что шанс срабатывания при конкретной попытке добычи (это отдельно, в будущей формуле)
+			var chance := hazard.prevalence * region.danger_level
+			if randf() < chance and hazard not in location.obstacles:
+				location.obstacles.append(hazard)  # защита от дублей, если препятствие возможно в нескольких биомах региона сразу
 
 	return location
 

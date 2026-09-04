@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dg30pbkg5ctxp" path="res://data/biome.gd" id="1_8jh8g"]
 [ext_resource type="Script" uid="uid://c1is8mp11sgnl" path="res://data/resource_type.gd" id="2_eadbt"]
+[ext_resource type="Script" uid="uid://cq16ifphouosp" path="res://data/obstacle_type.gd" id="2_n1nqs"]
+[ext_resource type="Resource" uid="uid://bv550a70ktim4" path="res://data/obstacles/rockfall.tres" id="3_7s0me"]
 [ext_resource type="Resource" uid="uid://ch6wem4qjii8i" path="res://data/resources/iron.tres" id="3_eadbt"]
 
 [resource]
@@ -10,4 +12,5 @@ id = "mountains"
 display_name = "Mountains"
 rock_type = "granite"
 typical_resources = Array[ExtResource("2_eadbt")]([ExtResource("3_eadbt")])
+typical_hazards = Array[ExtResource("2_n1nqs")]([ExtResource("3_7s0me")])
 metadata/_custom_type_script = "uid://dg30pbkg5ctxp"

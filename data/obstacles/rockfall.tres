@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ObstacleType" format=3 uid="uid://bv550a70ktim4"]
+
+[ext_resource type="Script" uid="uid://cq16ifphouosp" path="res://data/obstacle_type.gd" id="1_xxxu4"]
+
+[resource]
+script = ExtResource("1_xxxu4")
+id = "rockfall"
+metadata/_custom_type_script = "uid://cq16ifphouosp"
