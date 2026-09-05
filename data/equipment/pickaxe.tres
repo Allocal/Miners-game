@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EquipmentBlueprint" format=3 uid="uid://da8wc4orxvvdx"]
+
+[ext_resource type="Script" uid="uid://dsa3pehu1xsjq" path="res://data/resource_efficiency.gd" id="1_vggjd"]
+[ext_resource type="Resource" uid="uid://ch6wem4qjii8i" path="res://data/resources/iron.tres" id="2_auff8"]
+[ext_resource type="Script" uid="uid://bihltsnnq7c6l" path="res://data/equipment_blueprint.gd" id="2_rp6rt"]
+[ext_resource type="Resource" uid="uid://qh33fbgbde76" path="res://data/resources/coal.tres" id="3_cao4p"]
+
+[sub_resource type="Resource" id="Resource_vggjd"]
+script = ExtResource("1_vggjd")
+resource_type = ExtResource("2_auff8")
+metadata/_custom_type_script = "uid://dsa3pehu1xsjq"
+
+[sub_resource type="Resource" id="Resource_auff8"]
+script = ExtResource("1_vggjd")
+resource_type = ExtResource("3_cao4p")
+multiplier = 0.7
+metadata/_custom_type_script = "uid://dsa3pehu1xsjq"
+
+[resource]
+script = ExtResource("2_rp6rt")
+id = "pickaxe"
+display_name = "Pickaxe"
+efficiency_by_resource = Array[ExtResource("1_vggjd")]([SubResource("Resource_vggjd"), SubResource("Resource_auff8")])
+metadata/_custom_type_script = "uid://bihltsnnq7c6l"
