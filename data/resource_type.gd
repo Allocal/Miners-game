@@ -6,3 +6,5 @@ extends Resource
 @export var display_name: String
 @export var rarity: float = 1.0  # выше значение = реже встречается, снижает итоговое количество при добыче
 @export var base_value: float = 1.0
+@export var rare_bonus_finds: Array[BonusFind] = []
+@export var companion_resources: Array[CompanionResource] = []

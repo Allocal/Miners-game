@@ -8,4 +8,5 @@ var level: int = 1
 var experience: float = 0.0
 var skills: Dictionary = {}  # ключ: ResourceType.id, значение: уровень навыка
 var equipped_equipment: EquipmentBlueprint
+var equipment_durability: Dictionary = {}  # ключ: EquipmentBlueprint.id, значение: текущая прочность (int)
 var inventory: Inventory
