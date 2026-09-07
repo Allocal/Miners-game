@@ -19,5 +19,25 @@ func _ready() -> void:
 		obstacle_ids.append(obstacle.id)  # печатаем id, а не сами объекты — так нагляднее в консоли
 	print("Location obstacles: ", obstacle_ids)
 
+	var iron: ResourceType = load("res://data/resources/iron.tres")
+	var coal: ResourceType = load("res://data/resources/coal.tres")
+	var resource_types: Array[ResourceType] = [iron, coal]
+
+	var player := Player.new()
+	player.equipped_equipment = load("res://data/equipment/pickaxe.tres")
+
+	var target_id := ""
+	for resource_id in location.resource_amounts:
+		target_id = resource_id
+		break
+
+	if target_id == "":
+		print("В этой локации нечего копать")
+		return
+
+	print("Пробуем добыть: ", target_id)
+	var result := MiningResolver.attempt_mining(player, location, target_id, resource_types)
+	print("Результат добычи: ", result)
+
 
 
