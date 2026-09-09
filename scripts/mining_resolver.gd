@@ -60,9 +60,10 @@ static func attempt_mining(player: Player, location: Location, target_resource_i
 	player.equipment_durability[player.equipped_equipment.id] = durability
 
 	var found_rare: Array[String] = []
-	for bonus in resource_type.rare_bonus_finds:
-		if randf() < bonus.discovery_chance:
-			found_rare.append(bonus.resource_type.id)
+	for bonus in location.existing_rare_finds:
+		if bonus in resource_type.rare_bonus_finds:
+			if randf() < bonus.discovery_chance:
+				found_rare.append(bonus.resource_type.id)
 
 	var found_companions: Array[String] = []
 	for companion in resource_type.companion_resources:

@@ -1,10 +1,14 @@
 [gd_resource type="Resource" script_class="ResourceType" format=3 uid="uid://ch6wem4qjii8i"]
 
+[ext_resource type="Script" uid="uid://c27sgs8585ltg" path="res://data/companion_resource.gd" id="1_orcc4"]
 [ext_resource type="Script" uid="uid://c1is8mp11sgnl" path="res://data/resource_type.gd" id="1_uffmw"]
+[ext_resource type="Script" uid="uid://daooycnvtps7h" path="res://data/bonus_find.gd" id="2_krh30"]
+[ext_resource type="Resource" uid="uid://chjnwsr4qfnbk" path="res://data/BonusFinds/silver_in_iron.tres" id="3_krh30"]
 
 [resource]
 script = ExtResource("1_uffmw")
 id = "iron"
 display_name = "Iron"
 base_value = 15.0
+rare_bonus_finds = Array[ExtResource("2_krh30")]([ExtResource("3_krh30")])
 metadata/_custom_type_script = "uid://c1is8mp11sgnl"

@@ -5,3 +5,4 @@ extends RefCounted
 var region: Region
 var resource_amounts: Dictionary = {}  # ключ: ResourceType.id, значение: доступное количество
 var obstacles: Array[ObstacleType] = []
+var existing_rare_finds: Array[BonusFind] = []

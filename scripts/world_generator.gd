@@ -51,6 +51,10 @@ static func generate_location(region: Region, all_biomes: Array[Biome]) -> Locat
 			var current: float = location.resource_amounts.get(resource_type.id, 0.0)
 			location.resource_amounts[resource_type.id] = current + amount
 
+			for bonus in resource_type.rare_bonus_finds:
+				if randf() < bonus.chance and bonus not in location.existing_rare_finds:
+					location.existing_rare_finds.append(bonus)
+
 		for hazard in biome.typical_hazards:
 			# существование препятствия в локации решается один раз, тут — не то же самое,
 			# что шанс срабатывания при конкретной попытке добычи (это отдельно, в будущей формуле)

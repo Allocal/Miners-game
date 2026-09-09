@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BonusFind" format=3 uid="uid://chjnwsr4qfnbk"]
+
+[ext_resource type="Resource" uid="uid://bxfausnnve3ag" path="res://data/resources/silver.tres" id="1_h0can"]
+[ext_resource type="Script" uid="uid://daooycnvtps7h" path="res://data/bonus_find.gd" id="1_lvek8"]
+
+[resource]
+script = ExtResource("1_lvek8")
+resource_type = ExtResource("1_h0can")
+chance = 0.5
+discovery_chance = 0.8
+metadata/_custom_type_script = "uid://daooycnvtps7h"

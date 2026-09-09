@@ -13,6 +13,7 @@ func _ready() -> void:
 
 	var location := WorldGenerator.generate_location(region, biomes)
 	print("Location resources: ", location.resource_amounts)
+	print("Location existing rare finds: ", location.existing_rare_finds)
 
 	var obstacle_ids: Array[String] = []
 	for obstacle in location.obstacles:
@@ -35,8 +36,8 @@ func _ready() -> void:
 		print("В этой локации нечего копать")
 		return
 
-	print("Пробуем добыть: ", target_id)
-	var result := MiningResolver.attempt_mining(player, location, target_id, resource_types)
+	print("Пробуем добыть: iron")
+	var result := MiningResolver.attempt_mining(player, location, "iron", resource_types)
 	print("Результат добычи: ", result)
 
 

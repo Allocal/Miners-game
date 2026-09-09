@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ResourceType" format=3 uid="uid://bxfausnnve3ag"]
+
+[ext_resource type="Script" uid="uid://c27sgs8585ltg" path="res://data/companion_resource.gd" id="1_eqvu6"]
+[ext_resource type="Script" uid="uid://daooycnvtps7h" path="res://data/bonus_find.gd" id="2_hsfx7"]
+[ext_resource type="Script" uid="uid://c1is8mp11sgnl" path="res://data/resource_type.gd" id="3_tmi0g"]
+
+[resource]
+script = ExtResource("3_tmi0g")
+id = "silver"
+display_name = "Silver"
+rarity = 3.0
+base_value = 80.0
+metadata/_custom_type_script = "uid://c1is8mp11sgnl"
