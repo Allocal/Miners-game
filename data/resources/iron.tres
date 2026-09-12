@@ -10,5 +10,6 @@ script = ExtResource("1_uffmw")
 id = "iron"
 display_name = "Iron"
 base_value = 15.0
+category = "ore"
 rare_bonus_finds = Array[ExtResource("2_krh30")]([ExtResource("3_krh30")])
 metadata/_custom_type_script = "uid://c1is8mp11sgnl"

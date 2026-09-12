@@ -1,10 +1,13 @@
 [gd_resource type="Resource" script_class="ResourceType" format=3 uid="uid://qh33fbgbde76"]
 
 [ext_resource type="Script" uid="uid://c1is8mp11sgnl" path="res://data/resource_type.gd" id="1_c078h"]
+[ext_resource type="Script" uid="uid://c27sgs8585ltg" path="res://data/companion_resource.gd" id="1_ijdpj"]
+[ext_resource type="Script" uid="uid://daooycnvtps7h" path="res://data/bonus_find.gd" id="2_ub4uw"]
 
 [resource]
 script = ExtResource("1_c078h")
 id = "coal"
 display_name = "Coal"
 base_value = 5.0
+category = "fuel"
 metadata/_custom_type_script = "uid://c1is8mp11sgnl"

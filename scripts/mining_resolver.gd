@@ -25,6 +25,19 @@ static func _equipment_efficiency(equipment: EquipmentBlueprint, resource_type: 
 	return 0.3
 
 
+## Бросок на повышение уровня навыка данной категории.
+## Шанс растёт с каждой неудачной попыткой (защита от невезения) и никогда не доходит до 100%.
+static func _roll_skill_levelup(player: Player, category: String) -> void:
+	var attempts: int = player.skill_attempts.get(category, 0)
+	var chance: float = min(0.3 + attempts * 0.1, 0.9)
+
+	if randf() < chance:
+		var current_level: int = player.skills.get(category, 0)
+		player.skills[category] = current_level + 1
+		player.skill_attempts[category] = 0
+	else:
+		player.skill_attempts[category] = attempts + 1
+
 ## Обрабатывает одну попытку добычи конкретного ресурса в конкретной локации.
 static func attempt_mining(player: Player, location: Location, target_resource_id: String, all_resource_types: Array[ResourceType]) -> Dictionary:
 	var remaining: float = location.resource_amounts.get(target_resource_id, 0.0)
@@ -39,7 +52,7 @@ static func attempt_mining(player: Player, location: Location, target_resource_i
 		return {"success": false, "reason": "exhausted"}
 
 	var equipment_mod := _equipment_efficiency(player.equipped_equipment, resource_type)
-	var skill_level: int = player.skills.get(target_resource_id, 0)
+	var skill_level: int = player.skills.get(resource_type.category, 0)
 	var skill_quantity_mod := 1.0 + (skill_level * 0.015)
 	var skill_quality_mod := 1.0 + (skill_level * 0.015)
 
@@ -70,6 +83,8 @@ static func attempt_mining(player: Player, location: Location, target_resource_i
 		var companion_chance := companion.base_extraction_chance + (skill_level * 0.01)
 		if randf() < companion_chance:
 			found_companions.append(companion.resource_type.id)
+	
+	_roll_skill_levelup(player, resource_type.category)
 
 	return {
 		"success": true,

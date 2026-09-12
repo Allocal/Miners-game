@@ -36,9 +36,11 @@ func _ready() -> void:
 		print("В этой локации нечего копать")
 		return
 
-	print("Пробуем добыть: iron")
-	var result := MiningResolver.attempt_mining(player, location, "iron", resource_types)
-	print("Результат добычи: ", result)
+	print("Начальный навык (skills): ", player.skills)
+	for attempt in range(10):
+		var result := MiningResolver.attempt_mining(player, location, "iron", resource_types)
+		print("Попытка ", attempt + 1, ": ", result)
+		print("  skills: ", player.skills, " skill_attempts: ", player.skill_attempts)
 
 
 

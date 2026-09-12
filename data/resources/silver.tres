@@ -10,4 +10,5 @@ id = "silver"
 display_name = "Silver"
 rarity = 3.0
 base_value = 80.0
+category = "ore"
 metadata/_custom_type_script = "uid://c1is8mp11sgnl"
